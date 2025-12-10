@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Refactored a Boolean statement that was previously modified
 
+### Removed
+
+- Removed **MavLink_messages.py** as it is unused and out-of-scope
+
 ## [1.0.1] - 2025-12-11
 
 ### Fixed
