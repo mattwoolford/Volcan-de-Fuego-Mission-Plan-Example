@@ -1,22 +1,21 @@
 from pymavlink import mavutil
 from termcolor import cprint
 
-from defaults import DEFAULTS
+from settings import SETTINGS
 from utils.print import eprint, sprint, wprint
-
-'''
-Aircraft
-
-This class interfaces with the aircraft to connect, send, and receive commands.
-'''
 
 
 class Aircraft:
+    '''
+    Aircraft
+
+    This class interfaces with the aircraft to connect, send, and receive commands.
+    '''
 
     def __init__(self,
-                 protocol: str = DEFAULTS["CONNECTION"]["PROTOCOL"],
-                 host: str = DEFAULTS["CONNECTION"]["HOST"],
-                 port: int | str = DEFAULTS["CONNECTION"]["PORT"]):
+                 protocol: str = SETTINGS["CONNECTION"]["PROTOCOL"],
+                 host: str = SETTINGS["CONNECTION"]["HOST"],
+                 port: int | str = SETTINGS["CONNECTION"]["PORT"]):
         self.protocol = protocol
         self.host = host
         self.port = port
@@ -59,9 +58,9 @@ class Aircraft:
         self._conn = conn
 
     def connect(self,
-                protocol: str = DEFAULTS["CONNECTION"]["PROTOCOL"],
-                host: str = DEFAULTS["CONNECTION"]["HOST"],
-                port: int | str = DEFAULTS["CONNECTION"]["PORT"]):
+                protocol: str = SETTINGS["CONNECTION"]["PROTOCOL"],
+                host: str = SETTINGS["CONNECTION"]["HOST"],
+                port: int | str = SETTINGS["CONNECTION"]["PORT"]):
         self.protocol = protocol.lower()
         self.host = host.lower()
         self.port = port
