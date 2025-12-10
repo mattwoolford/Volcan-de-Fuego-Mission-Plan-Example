@@ -28,7 +28,7 @@ argsParser.add_argument("-p",
 
 # Get supplied CLI arguments
 args = argsParser.parse_args()
-enable_verbose_logging = True if args.verbose else False
+enable_verbose_logging = args.verbose
 protocol = args.protocol if args.protocol is not None else SETTINGS["CONNECTION"]["PROTOCOL"]
 host = args.host if args.host is not None else SETTINGS["CONNECTION"]["HOST"]
 port = args.port if args.port is not None else SETTINGS["CONNECTION"]["PORT"]
