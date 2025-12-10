@@ -17,8 +17,7 @@ def calculate_euclidean_distance(origin: tuple | int | float, destination: tuple
 def add_polar_waypoints(origin: tuple[float, float, int], target: tuple[float, float, int]):
 
     # Set the start and target coordinates
-    start = (14.4324619, -90.9353372, 1100)
-    target = (14.4746372, -90.8800006, 4410)
+    start = origin
 
     # Find the altitude difference between the start and target
     altitude_change = max(target[2], start[2]) - min(target[2], start[2])
@@ -46,8 +45,11 @@ def add_polar_waypoints(origin: tuple[float, float, int], target: tuple[float, f
     waypoint2 = Point(start_point_in_m.x + dx / 2 + dy,
                       start_point_in_m.y + dy / 2 - dx)
 
+    # Collect waypoints
+    waypoints = [start_point_in_m, waypoint1, target_point_in_m, waypoint2]
+
     # Convert projection back into decimal degrees (geographical coordinates)
-    coor_points = gp.GeoSeries([start_point_in_m, waypoint1, target_point_in_m, waypoint2],
+    coor_points = gp.GeoSeries(waypoints,
                                crs=geo_data_points_projection.crs).to_crs("EPSG:4326")
 
     # Return coordinate values

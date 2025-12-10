@@ -28,7 +28,7 @@ argsParser.add_argument("-p",
 
 # Get supplied CLI arguments
 args = argsParser.parse_args()
-enable_verbose_logging = True if args.verbose is not None else False
+enable_verbose_logging = True if args.verbose else False
 protocol = args.protocol if args.protocol is not None else SETTINGS["CONNECTION"]["PROTOCOL"]
 host = args.host if args.host is not None else SETTINGS["CONNECTION"]["HOST"]
 port = args.port if args.port is not None else SETTINGS["CONNECTION"]["PORT"]
@@ -47,7 +47,7 @@ ac.connect(protocol=protocol, host=host, port=port)
 
 # Calculate polar waypoint lat/long coordinates
 waypoints = add_polar_waypoints(start, target)
-waypoints.pop()
+waypoints.pop(0)
 start_3d_waypoint = (start[0], start[1], 0)
 via_3d_waypoints = [(wp[0], wp[1], target[2]) for wp in waypoints]
 
