@@ -21,7 +21,7 @@ def print_success(message, blink=False):
 
 def print_warning(message, blink=False):
     cprint(f" {message} ",
-           "white",
+           "black",
            "on_light_yellow",
            attrs=list(filter(lambda x: x is not None, ["bold", "blink" if blink else None])))
 

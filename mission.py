@@ -10,6 +10,11 @@ type Waypoint = tuple[float, float, int]
 
 
 class Mission:
+    '''
+    Mission
+
+    This class is a controller for sending mission instructions
+    '''
 
     def __init__(self,
                  ac: Aircraft,

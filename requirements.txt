@@ -1,5 +1,17 @@
+certifi==2025.11.12
 colorama==0.4.6
 fastcrc==0.3.4
+geopandas==1.1.1
 lxml==6.0.2
+numpy==2.3.5
+packaging==25.0
+pandas==2.3.3
 pymavlink==2.4.49
+pyogrio==0.12.1
+pyproj==3.7.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+shapely==2.1.2
+six==1.17.0
 termcolor==3.2.0
+tzdata==2025.2
