@@ -1,6 +1,6 @@
 # Volcán de Fuego Example Mission
 
-### Version 1.0.1
+### Version 1.0.2
 
 This project contains an example mission setup for sampling ash at Volcán de Fuego
 using [pymavlink](https://github.com/ArduPilot/pymavlink) as part of the University of Bristol MSc Aerial Robotics
