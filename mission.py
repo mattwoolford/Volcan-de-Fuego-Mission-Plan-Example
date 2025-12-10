@@ -40,9 +40,9 @@ class Mission:
 
     def start(self):
         conn = self._ac.conn
-        # Set home point to the start location
+        # Set home point to the end location (same as the start location if no end location was specified)
         if self._verbose_logging_is_enabled:
-            print(f"Setting home location to start location (Lat: {self._start[0]}, Lon: {self._start[1]})")
+            print(f"Setting home location to end location (Lat: {self._end[0]}, Lon: {self._end[1]})")
         conn.mav.command_long_send(
                 conn.target_system,
                 conn.target_component,
@@ -52,8 +52,8 @@ class Mission:
                 0,  # 0 = set home to the provided location / 1 = set home to the current location
                 0,
                 0,
-                self._start[0],
-                self._start[1],
+                self._end[0],
+                self._end[1],
                 0,
         )
         msg = conn.recv_match(type=['COMMAND_ACK'], blocking=True)
